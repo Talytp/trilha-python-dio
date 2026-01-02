@@ -1,11 +1,12 @@
-def exibir_poema(data_extenso, *args, **kwargs):
-    texto = "\n".join(args)
-    meta_dados = "\n".join([f"{chave.title()}: {valor}" for chave, valor in kwargs.items()])
-    mensagem = f"{data_extenso}\n\n{texto}\n\n{meta_dados}"
+def exibir_poema(data_extenso, titulo, *lista, **dicionario):
+    texto = "\n".join(lista) 
+    meta_dados = "\n".join([f"{dados.title()}: {valor}" for dados, valor in dicionario.items()])
+    mensagem = f"{data_extenso}\n\n{titulo}\n\n{texto}\n\n{meta_dados}"
     print(mensagem)
 
 
 exibir_poema(
+    "Sexta-feira, 02 de janeiro de 2026",
     "Zen of Python",
     "Beautiful is better than ugly.",
     "Explicit is better than implicit.",
@@ -29,3 +30,5 @@ exibir_poema(
     autor="Tim Peters",
     ano=1999,
 )
+#args age como tupla
+#kargs é esttutura chave valor, então sabemos que kargs começou quando atribuimos valor as variáveis autor e ano
